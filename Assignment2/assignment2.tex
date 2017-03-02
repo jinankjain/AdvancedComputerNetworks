@@ -1,0 +1,80 @@
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage{amsmath, amsthm, latexsym, amssymb, graphicx, bold-extra, mathrsfs, frcursive}
+\usepackage[pdftex]{color}
+\usepackage[T1]{fontenc}
+
+% Simplifies margin settings
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Puts list item indicators in bold; makes flush with previous margin
+\renewcommand\labelenumi{\bf\theenumi.}
+\renewcommand\labelenumii{\bf\theenumii.}
+% setlength\leftmargini{1.4em}
+\setlength\leftmarginii{1.4em}
+
+% Flexibility for headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhf{} %clear all header and footer fields
+\lhead{\bf \small Advanced Computer Networks \hspace*{\fill} Page \thepage}
+\headsep 0.2in
+\thispagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\parindent 0in
+\parskip 10pt
+\setlength{\headheight}{20pt}
+
+\title{ETH Zurich}
+
+\begin{document}
+
+%=======================================
+
+\begin{center}
+\Large \bf Advanced Computer Networks
+
+\Large \bf Assignment 2: Data centers: applications and traffic
+
+\large Submitted by Jinank Jain
+\end{center}
+
+\textbf{Solution 1}\\ \\
+\textbf{Part a} \\
+P(waiting for more than 200 milliseconds) = 0.01 \\ \\
+\textbf{Part b} \\
+P(waiting for more than 200 milliseconds) = 0.0001
+\bigskip
+
+\textbf{Solution 2}\\ \\
+\textbf{Part a} \\
+This scheme is trying to de-synchronize response from the backend servers because if they synchronize they could fill up the complete buffer on gatherer server which could create a lot of problems. \\ \\
+\textbf{Part b} \\
+P(waiting for more than 200 milliseconds) = 0.0001
+\bigskip
+
+\textbf{Solution 3}\\ \\
+Port mirroring is used on a network switch to send a copy of network packets seen on one switch port (or an entire VLAN) to a network monitoring connection on another switch port. This is commonly used for network appliances that require monitoring of network traffic such as an intrusion detection system, passive probe or real user monitoring (RUM) technology that is used to support application performance management 
+\bigskip
+
+\textbf{Solution 4}\\ \\
+For example if we look at the paper from Facebook we could find a couple a example due to which traffic would not be rack local:
+\begin{itemize}
+\item Cache Leader servers won't have rack local traffic as they are achieve cache coherency and in order to do that they need to talk to servers within datacenter or outside datacenter.
+\item Cache Follower servers won't have rack local traffic as they are providing data from cache to other servers in the datacenter and that's what was evident from the paper.
+\end{itemize}
+\bigskip
+
+
+\textbf{Solution 5}\\ \\
+Low
+\bigskip
+
+\clearpage
+
+%=======================================
+
+\end{document}
