@@ -44,16 +44,16 @@
 
 \textbf{Solution 1}\\ \\
 \textbf{Part a} \\
-P(waiting for more than 200 milliseconds) = 0.01 \\ \\
+P(waiting for more than 200 milliseconds) = 0.87 \\ \\
 \textbf{Part b} \\
-P(waiting for more than 200 milliseconds) = 0.0001
+P(waiting for more than 200 milliseconds) = 0.18
 \bigskip
 
 \textbf{Solution 2}\\ \\
 \textbf{Part a} \\
-This scheme is trying to de-synchronize response from the backend servers because if they synchronize they could fill up the complete buffer on gatherer server which could create a lot of problems. \\ \\
+This scheme is trying to de-synchronize response from the backend servers because if they synchronize they could fill up the complete buffer on gatherer server which could create a lot of problems. This is popularly known as TCP incast \\ \\
 \textbf{Part b} \\
-P(waiting for more than 200 milliseconds) = 0.0001
+Drawback would be average latency would be increased.
 \bigskip
 
 \textbf{Solution 3}\\ \\
@@ -70,7 +70,7 @@ For example if we look at the paper from Facebook we could find a couple a examp
 
 
 \textbf{Solution 5}\\ \\
-Low
+Low link utilization does not imply less processing at the switch. Since there can be a possibility that there can be a lot of packets of small size i.e. less than MTU which would lead low link utilization but switches would require to perform a lot of computation since they have to do a lot of packet processing for ex: they need to look into a lot packets and forward it accordingly. At the fixed line rate small packets will create more traffic.
 \bigskip
 
 \clearpage
