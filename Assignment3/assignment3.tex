@@ -1,0 +1,79 @@
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage{amsmath, amsthm, latexsym, amssymb, graphicx, bold-extra, mathrsfs, frcursive}
+\usepackage[pdftex]{color}
+\usepackage[T1]{fontenc}
+
+% Simplifies margin settings
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Puts list item indicators in bold; makes flush with previous margin
+\renewcommand\labelenumi{\bf\theenumi.}
+\renewcommand\labelenumii{\bf\theenumii.}
+% setlength\leftmargini{1.4em}
+\setlength\leftmarginii{1.4em}
+
+% Flexibility for headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhf{} %clear all header and footer fields
+\lhead{\bf \small Advanced Computer Networks \hspace*{\fill} Page \thepage}
+\headsep 0.2in
+\thispagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\parindent 0in
+\parskip 10pt
+\setlength{\headheight}{20pt}
+
+\title{ETH Zurich}
+
+\begin{document}
+
+%=======================================
+
+\begin{center}
+\Large \bf Advanced Computer Networks
+
+\Large \bf Assignment 3: Data center and Network Topology
+
+\large Submitted by Jinank Jain
+\end{center}
+
+\textbf{Solution 1}\\ \\
+No, both the topology would not be identical after removal of X marked core switches from the topology. Difference comes into the picture when there is second failure. So for the picture in the left if there is second in the aggregation layer the whole pod will become unreachable which is not the case with the figure on the right. So the figure on the right is more resilient than the figure on the left.
+\bigskip
+
+\textbf{Solution 2}\\ \\
+Ratio of number of cables with the port count on individual switches in the fat tree topology: $O(k^3)$ 
+\bigskip
+
+\textbf{Solution 3}\\ \\
+Limitation of big switch approach: 
+\begin{itemize}
+	\item Big Switches with high capacity at each port are super expensive to build.  All the large switches at the top of this topology costs a lot of money because of their high port density. 
+	\item This is specialized equipment and is available only from a very small number of switch vendors. A lot of it is proprietary technology, involves special purpose management interfaces, and is really quite inflexible and difficult to manage.
+	\item The most serious limitation to this approach is scalability. You're limited fundamentally in how many servers you can have by the port count of these large switches.
+\end{itemize}
+\bigskip
+
+\textbf{Solution 4}\\ \\
+We can have $k$ ECMP paths that can be set up for a fat-tree topology.
+\bigskip
+
+
+\textbf{Solution 5}\\ \\
+Number of network hop varies between 2-6 between two racks in a fat-tree topology. On an average these days number of hops required to reach any server is close to 7 and if we look at the worse case complexity of fat tree we require 6 hops which is not a good thing.
+\bigskip
+
+\textbf{Solution 6}\\ \\
+
+\bigskip
+
+\clearpage
+
+%=======================================
+
+\end{document}
